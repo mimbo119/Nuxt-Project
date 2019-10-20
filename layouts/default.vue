@@ -6,14 +6,20 @@
       :clipped="clipped"
       fixed
       app
+      fill-height
     >
-      <v-list>
+    <v-img 
+      class="bg-img"
+      fill-height
+    >
+      <v-list fill-height>
         <v-list-item
           v-for="(item, i) in items"
           :key="i"
           :to="item.to"
           router
           exact
+          style="font-color: white"
         >
           <v-list-item-action>
             <v-icon>{{ item.icon }}</v-icon>
@@ -23,6 +29,8 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
+    </v-img>
+      
     </v-navigation-drawer>
     <v-app-bar
       :clipped-left="clipped"
@@ -126,3 +134,16 @@ export default {
   }
 }
 </script>
+
+<style>
+.bg-img {
+        background-image: url(/image.png);
+        background-position: center center;
+        /* background-repeat:  no-repeat; */
+        background-attachment: fixed;
+        background-size:  cover;
+        background-color: #999;
+        height: 100% !important;
+        max-width: 300px;
+ }
+</style>
